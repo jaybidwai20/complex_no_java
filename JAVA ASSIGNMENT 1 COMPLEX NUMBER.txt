@@ -1,0 +1,75 @@
+import java.util.Scanner;
+class complex
+{
+    public 
+    int real,imaginary;
+    
+    void setdata(int p,int q)
+    {
+        real=p;
+        imaginary=q;
+        System.out.println("complex no :"+real+"+i"+imaginary);
+    }
+    void sum(complex o1,complex o2)
+    {
+        complex c4=new complex();
+        c4.real=o1.real+o2.real;
+        c4.imaginary=o1.imaginary+o2.imaginary;
+        
+        System.out.println("sum of two complex number is:"+c4.real+"+"+c4.imaginary+"i");
+        
+        
+    }
+    
+    void substract(complex o1,complex o2)
+    {
+        complex c6=new complex();
+        c6.real=o1.real-o2.real;
+        c6.imaginary=o1.imaginary-o2.imaginary;
+        
+        System.out.println("substraction of two complex number is:"+c6.real+"+"+c6.imaginary+"i");
+        
+     }
+     
+    void multiplication(complex o1,complex o2)
+    {
+        complex c8=new complex();
+        c8.real=(o1.real*o2.real)-(o1.imaginary*o2.imaginary);
+        c8.imaginary=(o1.imaginary*o2.real)+(o1.real*o2.imaginary);
+        
+        System.out.println("multiplication of two complex number is:"+c8.real+"+"+c8.imaginary+"i");
+        
+     } 
+   
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner sc=new Scanner(System.in);
+	    int a,b,c,d;
+		System.out.println("enter the real and imagniary part of complex number 1:");
+		a=sc.nextInt();
+		b=sc.nextInt();
+		
+		complex c1=new complex();
+		c1.setdata(a,b);
+		
+		System.out.println("enter the real and imagniary part of complex number 2:");
+		c=sc.nextInt();
+	    d=sc.nextInt();
+	    
+	    complex c2=new complex();
+		c2.setdata(c,d);
+	    
+	    complex c3=new complex();
+	    c3.sum(c1,c2);
+	    
+	    complex c5=new complex();
+	    c5.substract(c1,c2);
+	    
+		complex c7=new complex();
+	    c7.multiplication(c1,c2);
+		
+	}
+}
